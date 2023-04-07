@@ -47,3 +47,10 @@ export const USER_NOT_FOUND: ErrorResponse = {
   code: 'U001',
   message: '존재하지 않는 사용자입니다.',
 };
+
+// post
+export const POST_NOT_FOUND: ErrorResponse = {
+  status : HttpStatus.NOT_FOUND,
+  code : 'P001',
+  message : '존재하지 않는 포스트입니다.'
+}

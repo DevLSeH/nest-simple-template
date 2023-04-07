@@ -19,3 +19,9 @@ export const SIGNUP_USER_SUCCESS: ResultResponse = {
   code: 'U003',
   message: '회원가입에 성공했습니다.',
 };
+
+export const POST_SUCCESS : ResultResponse = {
+  status : HttpStatus.OK,
+  code: 'U004',
+  message : 'POST 조회에 성공했습니다.'
+}
