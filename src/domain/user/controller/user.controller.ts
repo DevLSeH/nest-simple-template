@@ -15,7 +15,11 @@ import { Public } from 'src/global/decorator/public.decorator';
 
 @Controller('user')
 export class UserController {
+<<<<<<< HEAD
   constructor(private readonly userService: UserService) {}
+=======
+  constructor(private readonly userSerivce: UserService) { }
+>>>>>>> 9c2c0627cc3b76643f0fe54e8ed614f9377d03ed
 
   @Get('/all')
   @HttpCode(GET_ALL_USERS_SUCCESS.status)
@@ -29,8 +33,15 @@ export class UserController {
 
   @Get('/profile')
   @HttpCode(GET_USER_SUCCESS.status)
+<<<<<<< HEAD
   async getMyProfile(@SignedUser() id) {
     const data = await this.userService.getUserById(id);
+=======
+  async getMyProfile(@SignedUser() user) {
+    console.log(user);
+
+    const data = await this.userSerivce.getUserById(user.id);
+>>>>>>> 9c2c0627cc3b76643f0fe54e8ed614f9377d03ed
     return new ResultResponse(GET_USER_SUCCESS, data);
   }
 
