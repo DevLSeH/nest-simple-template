@@ -2,22 +2,22 @@ import { User } from 'src/domain/user/entity/user.entity';
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Post {
-  @ManyToOne(()=> User, (user)=>user.id)
-  user : User;
+export class Posts {
+  @ManyToOne(() => User, (user) => user.id)
+  user: User;
 
   @PrimaryGeneratedColumn()
-  postid : number;
+  postid: number;
 
   @Column()
-  isVisible : boolean;
+  isVisible: boolean;
 
   @Column()
-  postbody : string;
+  postbody: string;
 
-  constructor(postbody : string ,isVisible:boolean) {
+  constructor(postbody: string) {
     this.postbody = postbody;
-    this.isVisible = isVisible;
+    this.isVisible = true;
   }
 
 }

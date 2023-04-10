@@ -1,6 +1,6 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { AUTHORITY } from './enum/authority.enum';
-import { Post } from 'src/domain/post/entity/enum/post.entity';
+import { Posts } from 'src/domain/post/entity/post.entity';
 
 @Entity()
 export class User {
@@ -22,8 +22,8 @@ export class User {
   @Column({ default: AUTHORITY.ROLE_USER })
   authority: AUTHORITY;
 
-  @OneToMany(()=>Post, (post)=>post.user)
-  posts: Post[]
+  @OneToMany(() => Posts, (post) => post.user)
+  posts: Posts[]
 
   constructor(name: string, email: string, password: string) {
     this.username = name;
